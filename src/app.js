@@ -42,8 +42,8 @@ app.all("*", (req, res) => {
 });
 
 let serverConfigurations = require("./serverconfig");
-app.listen(serverConfigurations.serverPort, () => {
-    let serverStatus = `Server listening on localhost:${serverConfigurations.serverPort}.`;
+app.listen(serverConfigurations.serverPort, '0.0.0.0', () => {
+    let serverStatus = `Server listening on 0.0.0.0:${serverConfigurations.serverPort}.`;
     logger.logEvent("server start", serverStatus);
     console.log(serverStatus);
 });
